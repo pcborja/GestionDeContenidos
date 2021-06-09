@@ -5,9 +5,5 @@ using UnityEngine.UI;
 
 public class Panel : MonoBehaviour
 {
-    public GameObject verticalPanel;
-    
-    public void OnScroll(Vector2 scroll)
-    {
-    }
+    public List<GameVisual> gamesVisuals;
 }

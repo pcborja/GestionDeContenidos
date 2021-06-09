@@ -2,6 +2,7 @@
 ///Sourced from - http://forum.unity3d.com/threads/receive-onclick-event-and-pass-it-on-to-lower-ui-elements.293642/
 
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace UnityEngine.UI.Extensions
@@ -26,6 +27,8 @@ namespace UnityEngine.UI.Extensions
         /// </summary>
         public List<string> AvailableOptions;
 
+        public Manager manager;
+        
         //private bool isInitialized = false;
         private bool _isPanelActive = false;
         private bool _hasDrawnOnce = false;
@@ -39,9 +42,6 @@ namespace UnityEngine.UI.Extensions
 
         private RectTransform _overlayRT;
         private RectTransform _scrollPanelRT;
-        private RectTransform _scrollBarRT;
-        private RectTransform _slidingAreaRT;
-        private RectTransform _scrollHandleRT;
         private RectTransform _itemsPanelRT;
         private Canvas _canvas;
         private RectTransform _canvasRT;
@@ -57,17 +57,6 @@ namespace UnityEngine.UI.Extensions
 
         public string Text { get; private set; }
 
-        [SerializeField]
-        private float _scrollBarWidth = 20.0f;
-        public float ScrollBarWidth
-        {
-            get { return _scrollBarWidth; }
-            set
-            {
-                _scrollBarWidth = value;
-                RedrawPanel();
-            }
-        }
 
         //    private int scrollOffset; //offset of the selected item
         //    private int _selectedIndex = 0;
@@ -163,9 +152,6 @@ namespace UnityEngine.UI.Extensions
 
 
                 _scrollPanelRT = _overlayRT.Find("ScrollPanel").GetComponent<RectTransform>();
-                _scrollBarRT = _scrollPanelRT.Find("Scrollbar").GetComponent<RectTransform>();
-                _slidingAreaRT = _scrollBarRT.Find("SlidingArea").GetComponent<RectTransform>();
-                _scrollHandleRT = _slidingAreaRT.Find("Handle").GetComponent<RectTransform>();
                 _itemsPanelRT = _scrollPanelRT.Find("Items").GetComponent<RectTransform>();
                 //itemPanelLayout = itemsPanelRT.gameObject.GetComponent<LayoutGroup>();
 
@@ -331,10 +317,10 @@ namespace UnityEngine.UI.Extensions
         /// <param name="item"></param>
         private void OnItemClicked(string item)
         {
-            //Debug.Log("item " + item + " clicked");
-            Text = item;
+            Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower());
             _mainInput.text = Text;
             ToggleDropdownPanel(true);
+            manager.OpenGame(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower()));
         }
 
         //private void UpdateSelected()
@@ -368,8 +354,6 @@ namespace UnityEngine.UI.Extensions
 
         private void RedrawPanel()
         {
-            float scrollbarWidth = _panelItems.Count > ItemsToDisplay ? _scrollBarWidth : 0f;//hide the scrollbar if there's not enough items
-            _scrollBarRT.gameObject.SetActive(_panelItems.Count > ItemsToDisplay);
             if (!_hasDrawnOnce || _rectTransform.sizeDelta != _inputRT.sizeDelta)
             {
                 _hasDrawnOnce = true;
@@ -397,15 +381,7 @@ namespace UnityEngine.UI.Extensions
             _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
             _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _rectTransform.sizeDelta.x);
 
-            _itemsPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _scrollPanelRT.sizeDelta.x - scrollbarWidth - 5);
             _itemsPanelRT.anchoredPosition = new Vector2(5, 0);
-
-            _scrollBarRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, scrollbarWidth);
-            _scrollBarRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
-            if (scrollbarWidth == 0) _scrollHandleRT.gameObject.SetActive(false); else _scrollHandleRT.gameObject.SetActive(true); 
-
-            _slidingAreaRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
-            _slidingAreaRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight - _scrollBarRT.sizeDelta.x);
         }
 
         public void OnValueChanged(string currText)
