@@ -311,10 +311,6 @@ namespace UnityEngine.UI.Extensions
 			SetInputTextColor ();
         }
 
-        /// <summary>
-        /// what happens when an item in the list is selected
-        /// </summary>
-        /// <param name="item"></param>
         private void OnItemClicked(string item)
         {
             Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower());
@@ -322,36 +318,7 @@ namespace UnityEngine.UI.Extensions
             ToggleDropdownPanel(true);
             manager.OpenGame(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower()));
         }
-
-        //private void UpdateSelected()
-        //{
-        //    SelectedItem = (_selectedIndex > -1 && _selectedIndex < Items.Count) ? Items[_selectedIndex] : null;
-        //    if (SelectedItem == null) return;
-
-        //    bool hasImage = SelectedItem.Image != null;
-        //    if (hasImage)
-        //    {
-        //        mainButton.img.sprite = SelectedItem.Image;
-        //        mainButton.img.color = Color.white;
-
-        //        //if (Interactable) mainButton.img.color = Color.white;
-        //        //else mainButton.img.color = new Color(1, 1, 1, .5f);
-        //    }
-        //    else
-        //    {
-        //        mainButton.img.sprite = null;
-        //    }
-
-        //    mainButton.txt.text = SelectedItem.Caption;
-
-        //    //update selected index color
-        //    for (int i = 0; i < itemsPanelRT.childCount; i++)
-        //    {
-        //        panelItems[i].btnImg.color = (_selectedIndex == i) ? mainButton.btn.colors.highlightedColor : new Color(0, 0, 0, 0);
-        //    }
-        //}
-
-
+        
         private void RedrawPanel()
         {
             if (!_hasDrawnOnce || _rectTransform.sizeDelta != _inputRT.sizeDelta)
@@ -376,7 +343,7 @@ namespace UnityEngine.UI.Extensions
 
             if (_panelItems.Count < 1) return;
 
-            float dropdownHeight = _rectTransform.sizeDelta.y * Mathf.Min(_itemsToDisplay, _panelItems.Count) + DropdownOffset;
+            float dropdownHeight = _rectTransform.sizeDelta.y * _panelItems.Count + DropdownOffset;
 
             _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, dropdownHeight);
             _scrollPanelRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _rectTransform.sizeDelta.x);
