@@ -5,5 +5,6 @@ using UnityEngine.UI;
 public class Game : ScriptableObject
 {
     public string gameName;
+    public string description;
     public Image gameImage;
 }

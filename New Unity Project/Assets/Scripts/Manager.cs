@@ -31,9 +31,10 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void OpenGame(string gameName)
+    public void OpenGamePopup(string gameName)
     {
         var gameSelected = _gamesFound.First(x => x.gameName == gameName);
-        //Open Game logic
+        
+        
     }
 }
