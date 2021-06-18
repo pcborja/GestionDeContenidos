@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GamePopup : MonoBehaviour
 {
     public Image gameImage;
+    public Image[] gameScreenshots;
+    public TextMeshProUGUI rating;
     public TextMeshProUGUI gameName;
     public TextMeshProUGUI gameDesc;
 
@@ -22,7 +24,14 @@ public class GamePopup : MonoBehaviour
 
         gameName.text = game.name;
         gameDesc.text = game.description;
-        
+        rating.text = game.punctuation.ToString();
+
+        for (var i = 0; i < game.gameScreenshots.Length; i++)
+        {
+            if (i < gameScreenshots.Length && game.gameScreenshots[i].sprite)
+                gameScreenshots[i].sprite = game.gameScreenshots[i].sprite;
+        }
+
         if (game.gameImage)
             gameImage.sprite = game.gameImage.sprite;
     }

@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameName: Angry Equations
   description: Juego de resolver ecuaciones enojadas que intentaran atacarte.
+  punctuation: 4.33
+  gameScreenshots: []
   gameImage: {fileID: 0}

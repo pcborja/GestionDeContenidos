@@ -1,17 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 
 public class Manager : MonoBehaviour
 {
     public List<Panel> panels;
-
     public AutoCompleteComboBox comboBox;
     public GamePopup popup;
+    public Star[] stars;
     
     private List<GameVisual> _gameVisuals = new List<GameVisual>();
     private Game[] _gamesFound;
@@ -25,9 +22,17 @@ public class Manager : MonoBehaviour
         _gamesFound = Resources.LoadAll<Game>("");
 
         for (var i = 0; i < _gamesFound.Length; i++)
-        {   
-            comboBox.AddItem(_gamesFound[i].gameName);
-            _gameVisuals[i].SetupGame(_gamesFound[i]);
+        {
+            if (i < _gameVisuals.Count)
+            {
+                comboBox.AddItem(_gamesFound[i].gameName);
+                _gameVisuals[i].SetupGame(_gamesFound[i]);
+            }
+        }
+
+        foreach (var star in stars)
+        {
+            star.SetStar(this);
         }
     }
 
@@ -60,5 +65,28 @@ public class Manager : MonoBehaviour
     public void OnSettingsButton()
     {
         CloseGamePopup();
+    }
+
+    public void OnStarClicked(Star starCliked)
+    {
+        var starFound = false;
+        
+        foreach (var star in stars)
+        {
+            if (starFound)
+            {
+                star.TurnYellow(false);
+                continue;
+            }
+            
+            if (star != starCliked)
+                star.TurnYellow(true);
+
+            if (star == starCliked)
+            {
+                star.TurnYellow(true);
+                starFound = true;
+            }
+        }
     }
 }
