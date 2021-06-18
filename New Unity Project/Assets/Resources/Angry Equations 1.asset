@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc34265eb1364a4f99b190abc916880, type: 3}
   m_Name: Angry Equations 1
   m_EditorClassIdentifier: 
-  gameName: Angry Equations
+  gameName: Angry Equations 2
+  description: 
   gameImage: {fileID: 0}

@@ -221,7 +221,10 @@
      <Compile Include="Assets\com.unity.uiextensions\Runtime\Scripts\Utilities\UIScrollToSelection.cs" />
      <Compile Include="Assets\com.unity.uiextensions\Runtime\Scripts\Utilities\UIScrollToSelectionXY.cs" />
      <Compile Include="Assets\com.unity.uiextensions\Runtime\Scripts\Utilities\UISelectableExtension.cs" />
+     <Compile Include="Assets\Scripts\Constants.cs" />
+     <Compile Include="Assets\Scripts\EventsManager.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
+     <Compile Include="Assets\Scripts\GamePopup.cs" />
      <Compile Include="Assets\Scripts\GameVisual.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\Panel.cs" />

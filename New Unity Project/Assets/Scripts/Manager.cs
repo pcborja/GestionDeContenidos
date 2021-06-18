@@ -11,8 +11,8 @@ public class Manager : MonoBehaviour
     public List<Panel> panels;
 
     public AutoCompleteComboBox comboBox;
-    public InputField searchText;
-
+    public GamePopup popup;
+    
     private List<GameVisual> _gameVisuals = new List<GameVisual>();
     private Game[] _gamesFound;
 
@@ -31,10 +31,34 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void OpenGamePopup(string gameName)
+    public void FindGameName(string gameName)
     {
         var gameSelected = _gamesFound.First(x => x.gameName == gameName);
-        
-        
+        OpenGamePopup(gameSelected);
+    }
+
+    public void OpenGamePopup(Game gameSelected)
+    {
+        popup.SetGame(gameSelected);
+    }
+
+    public void CloseGamePopup()
+    {
+        EventsManager.TriggerEvent(Constants.TypeOfEvent.ClosePopup);
+    }
+
+    public void OnMyGamesButton()
+    {
+        CloseGamePopup();
+    }
+
+    public void OnProfileButton()
+    {
+        CloseGamePopup();
+    }
+    
+    public void OnSettingsButton()
+    {
+        CloseGamePopup();
     }
 }

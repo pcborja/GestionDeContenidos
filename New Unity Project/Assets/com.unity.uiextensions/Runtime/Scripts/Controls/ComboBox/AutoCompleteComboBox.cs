@@ -316,7 +316,7 @@ namespace UnityEngine.UI.Extensions
             Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower());
             _mainInput.text = Text;
             ToggleDropdownPanel(true);
-            manager.OpenGamePopup(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower()));
+            manager.FindGameName(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.ToLower()));
         }
         
         private void RedrawPanel()
