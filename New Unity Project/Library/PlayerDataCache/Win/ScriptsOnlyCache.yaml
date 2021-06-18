@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Game
+    - GamePopup
     - GameVisual
     - Manager
     - Panel
@@ -13,6 +14,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -112,6 +115,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11886}
     - Class: 114
       Script: {instanceID: 11914}
+    - Class: 114
+      Script: {instanceID: 20064}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -561,7 +566,7 @@ ScriptsOnlyBuild:
     className: UIVerticalScroller
   - hash:
       serializedVersion: 2
-      Hash: ef45aa482e3b732640014c16ab22e49c
+      Hash: 610c08e336343616316913f130602bea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -1221,7 +1226,7 @@ ScriptsOnlyBuild:
     className: UICornerCut
   - hash:
       serializedVersion: 2
-      Hash: 0fb43ef7402de9fe7fb915ed27c49135
+      Hash: c7ca9d9a8edab23d2b749906414b8360
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Manager
@@ -1309,6 +1314,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 3c7666c795c1d71f51ba89d35a9a5b26
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GamePopup
   platform: 5
   scenePathNames:
   - Assets/Scenes/Principal.unity
