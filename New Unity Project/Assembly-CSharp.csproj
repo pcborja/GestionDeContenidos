@@ -228,6 +228,9 @@
      <Compile Include="Assets\Scripts\GameVisual.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\Panel.cs" />
+     <Compile Include="Assets\Scripts\Popup.cs" />
+     <Compile Include="Assets\Scripts\ProfileGame.cs" />
+     <Compile Include="Assets\Scripts\ProfilePopup.cs" />
      <Compile Include="Assets\Scripts\ScrollRectEx.cs" />
      <Compile Include="Assets\Scripts\Star.cs" />
      <Compile Include="Assets\Scripts\StringExtensions.cs" />

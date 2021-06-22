@@ -7,7 +7,8 @@ public class Manager : MonoBehaviour
 {
     public List<Panel> panels;
     public AutoCompleteComboBox comboBox;
-    public GamePopup popup;
+    public GamePopup gamePopup;
+    public ProfilePopup profilePopup;
     public Star[] stars;
     
     private List<GameVisual> _gameVisuals = new List<GameVisual>();
@@ -44,27 +45,29 @@ public class Manager : MonoBehaviour
 
     public void OpenGamePopup(Game gameSelected)
     {
-        popup.SetGame(gameSelected, this);
+        ClosePopups();
+        gamePopup.SetPopup(gameSelected, this);
     }
 
-    public void CloseGamePopup()
+    public void ClosePopups()
     {
         EventsManager.TriggerEvent(Constants.TypeOfEvent.ClosePopup);
     }
 
     public void OnMyGamesButton()
     {
-        CloseGamePopup();
+        ClosePopups();
     }
 
     public void OnProfileButton()
     {
-        CloseGamePopup();
+        ClosePopups();
+        profilePopup.SetPopup(this);
     }
     
     public void OnSettingsButton()
     {
-        CloseGamePopup();
+        ClosePopups();
     }
 
     public void OnStarClicked(Star starCliked)

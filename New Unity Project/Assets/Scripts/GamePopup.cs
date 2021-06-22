@@ -1,48 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using TMPro;
 using UnityEngine.UI;
 
-public class GamePopup : MonoBehaviour
+public class GamePopup : Popup
 {
     public Image gameImage;
     public Image[] gameScreenshots;
+    public Image defaultScreenshot;
     public TextMeshProUGUI rating;
     public TextMeshProUGUI gameName;
     public TextMeshProUGUI gameDesc;
 
-    private Manager _manager;
-    
-    public void Start()
+    public void SetPopup(Game game, Manager manager)
     {
-        EventsManager.SubscribeToEvent(Constants.TypeOfEvent.ClosePopup, ClosePopup);
-        ClosePopup();
-    }
-    
-    public void SetGame(Game game, Manager manager)
-    {
-        _manager = manager;
-        gameObject.SetActive(true);
+        base.SetPopup(manager);
 
         gameName.text = game.name;
         gameDesc.text = game.description;
         rating.text = game.punctuation.ToString();
 
-        for (var i = 0; i < game.gameScreenshots.Length; i++)
+        if (game.gameScreenshots.Length == 0)
         {
-            if (i < gameScreenshots.Length && game.gameScreenshots[i])
-                gameScreenshots[i].sprite = game.gameScreenshots[i];
+            for (var i = 0; i < 4; i++)
+                gameScreenshots[i].sprite = defaultScreenshot.sprite;
+        }
+        else
+        {
+            for (var i = 0; i < game.gameScreenshots.Length; i++)
+            {
+                if (i < gameScreenshots.Length)
+                    gameScreenshots[i].sprite = game.gameScreenshots[i] ? game.gameScreenshots[i] : defaultScreenshot.sprite;
+            }
         }
 
         if (game.gameSprite)
             gameImage.sprite = game.gameSprite;
     }
 
-    private void ClosePopup(params object[] data)
+    protected override void ClosePopup(params object[] data)
     {
+        if (!_manager) return;
+        
         TurnOffStars(_manager.stars);
-        gameObject.SetActive(false);
+        base.ClosePopup(data);
     }
 
     private void TurnOffStars(Star[] stars)
@@ -51,10 +50,5 @@ public class GamePopup : MonoBehaviour
         {
             star.TurnYellow(false);
         }
-    }
-    
-    public void ClosePopup()
-    {
-        gameObject.SetActive(false);
     }
 }
