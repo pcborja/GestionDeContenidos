@@ -15,8 +15,8 @@ public class GameVisual : MonoBehaviour
         _game = game;
         gameName.text = game.gameName;
         
-        if (game.gameImage)
-            gameImage.sprite = game.gameImage.sprite;
+        if (game.gameSprite)
+            gameImage.sprite = game.gameSprite;
     }
 
     public void OnGameClicked()

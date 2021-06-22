@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dc34265eb1364a4f99b190abc916880, type: 3}
-  m_Name: MathSurfers
+  m_Name: Ruleta matematica
   m_EditorClassIdentifier: 
-  gameName: Math Surfers
-  gameImage: {fileID: 0}
+  gameName: Ruleta matematica
+  description: Gira la ruleta y resuelve las ecuaciones!
+  punctuation: 4.83
+  gameScreenshots: []
+  gameSprite: {fileID: 21300000, guid: 97784b45f40d6e248b6cd40e7331903a, type: 3}

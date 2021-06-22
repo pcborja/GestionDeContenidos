@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dc34265eb1364a4f99b190abc916880, type: 3}
-  m_Name: ChemicRun 1
+  m_Name: Escape quimico 2
   m_EditorClassIdentifier: 
-  gameName: Chemic Run 2
-  description: 
-  gameImage: {fileID: 0}
+  gameName: Escape quimico 2
+  description: Escapa del templo resolviendo las ecuaciones quimicas!
+  punctuation: 3
+  gameScreenshots: []
+  gameSprite: {fileID: 21300000, guid: d0d22dd1336fff7459390956b5ca6d61, type: 3}

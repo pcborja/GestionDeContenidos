@@ -44,7 +44,7 @@ public class Manager : MonoBehaviour
 
     public void OpenGamePopup(Game gameSelected)
     {
-        popup.SetGame(gameSelected);
+        popup.SetGame(gameSelected, this);
     }
 
     public void CloseGamePopup()

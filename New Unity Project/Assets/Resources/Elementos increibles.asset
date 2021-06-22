@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dc34265eb1364a4f99b190abc916880, type: 3}
-  m_Name: Angry Equations
+  m_Name: Elementos increibles
   m_EditorClassIdentifier: 
-  gameName: Angry Equations
-  description: Juego de resolver ecuaciones enojadas que intentaran atacarte.
-  punctuation: 4.33
+  gameName: Elementos increibles
+  description: Descubre un mundo lleno de elementos biologicos y resuelve el misterio
+    que los envuelve.
+  punctuation: 5
   gameScreenshots: []
-  gameImage: {fileID: 0}
+  gameSprite: {fileID: 21300000, guid: 79e44f5fcfef7c94f83b693abdac5b42, type: 3}

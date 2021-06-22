@@ -12,14 +12,17 @@ public class GamePopup : MonoBehaviour
     public TextMeshProUGUI gameName;
     public TextMeshProUGUI gameDesc;
 
+    private Manager _manager;
+    
     public void Start()
     {
         EventsManager.SubscribeToEvent(Constants.TypeOfEvent.ClosePopup, ClosePopup);
         ClosePopup();
     }
     
-    public void SetGame(Game game)
+    public void SetGame(Game game, Manager manager)
     {
+        _manager = manager;
         gameObject.SetActive(true);
 
         gameName.text = game.name;
@@ -28,17 +31,26 @@ public class GamePopup : MonoBehaviour
 
         for (var i = 0; i < game.gameScreenshots.Length; i++)
         {
-            if (i < gameScreenshots.Length && game.gameScreenshots[i].sprite)
-                gameScreenshots[i].sprite = game.gameScreenshots[i].sprite;
+            if (i < gameScreenshots.Length && game.gameScreenshots[i])
+                gameScreenshots[i].sprite = game.gameScreenshots[i];
         }
 
-        if (game.gameImage)
-            gameImage.sprite = game.gameImage.sprite;
+        if (game.gameSprite)
+            gameImage.sprite = game.gameSprite;
     }
 
     private void ClosePopup(params object[] data)
     {
+        TurnOffStars(_manager.stars);
         gameObject.SetActive(false);
+    }
+
+    private void TurnOffStars(Star[] stars)
+    {
+        foreach (var star in stars)
+        {
+            star.TurnYellow(false);
+        }
     }
     
     public void ClosePopup()
