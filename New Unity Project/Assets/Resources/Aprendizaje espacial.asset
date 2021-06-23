@@ -15,5 +15,6 @@ MonoBehaviour:
   gameName: Aprendizaje espacial
   description: Explora el espacio y aprende mas en cada intento.
   punctuation: 4.2
+  punctuationAmount: 1123
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: 8cbb0f61728ab744ca8972ea09e3effe, type: 3}

@@ -7,6 +7,7 @@ public class Game : ScriptableObject
     public string gameName;
     public string description;
     public float punctuation;
+    public int punctuationAmount;
     public Sprite[] gameScreenshots;
     public Sprite gameSprite;
 }

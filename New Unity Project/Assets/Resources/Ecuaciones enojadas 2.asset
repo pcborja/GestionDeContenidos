@@ -15,6 +15,7 @@ MonoBehaviour:
   gameName: Ecuaciones enojadas 2
   description: Deberas resolver ecuaciones enojadas que intentaran atacarte.
   punctuation: 4.7
+  punctuationAmount: 5460
   gameScreenshots:
   - {fileID: 21300000, guid: 5fb2e1ce409db5648ba56ed2cc6d7ccf, type: 3}
   - {fileID: 21300000, guid: b3104cdf95682924f945a6814bae0775, type: 3}

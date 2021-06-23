@@ -7,6 +7,7 @@ public class GamePopup : Popup
     public Image[] gameScreenshots;
     public Image defaultScreenshot;
     public TextMeshProUGUI rating;
+    public TextMeshProUGUI ratingAmount;
     public TextMeshProUGUI gameName;
     public TextMeshProUGUI gameDesc;
 
@@ -17,6 +18,7 @@ public class GamePopup : Popup
         gameName.text = game.name;
         gameDesc.text = game.description;
         rating.text = game.punctuation.ToString();
+        ratingAmount.text = "(" + game.punctuationAmount + ")";
 
         if (game.gameScreenshots.Length == 0)
         {

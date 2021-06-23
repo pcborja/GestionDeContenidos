@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Responde a las preguntas sobre matematica para sumar puntos y obtiene
     premios en base a tus puntos
   punctuation: 2
+  punctuationAmount: 1125
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: b6c8e4b6ce7039b4282b25ba3d000cbd, type: 3}

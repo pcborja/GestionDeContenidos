@@ -15,5 +15,6 @@ MonoBehaviour:
   gameName: Misterio Linguistico
   description: Sigue las pistas y resuelve el misterio!
   punctuation: 0
+  punctuationAmount: 987
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: 2335c780c4661364e900d9ce64ab2941, type: 3}

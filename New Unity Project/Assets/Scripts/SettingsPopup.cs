@@ -6,7 +6,8 @@ public class SettingsPopup : Popup
     
     public void ChangeVolume(Slider slider)
     {
-        _manager.ChangeVolume(slider.value);
+        if(_manager)
+            _manager.ChangeVolume(slider.value);
     }
 
     public void SetVolume(float audioSourceVolume)

@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Descubre el maravilloso mundo de las ecuaciones cuadraticas y construye
     nuevas.
   punctuation: 4.9
+  punctuationAmount: 6879
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: 3b0468f5682e55648b365c58cd3cba07, type: 3}

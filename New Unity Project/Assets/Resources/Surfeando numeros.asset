@@ -15,5 +15,6 @@ MonoBehaviour:
   gameName: Surfeando numeros
   description: Haz las cuentas necesarias para mantener la ola!
   punctuation: 4
+  punctuationAmount: 871
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: f60da12579e80124ea8c9d2f3010eb98, type: 3}

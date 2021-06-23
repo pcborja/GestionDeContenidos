@@ -15,5 +15,6 @@ MonoBehaviour:
   gameName: Ajedrez
   description: Nada como el clasico ajedrez. Podras vencer a tus oponentes?
   punctuation: 3.5
+  punctuationAmount: 2513
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: 097cf699b0c3083429e45fdb9773afa9, type: 3}

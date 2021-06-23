@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Responde a las preguntas sobre biologia para sumar puntos y obtiene
     premios en base a tus puntos
   punctuation: 4.2
+  punctuationAmount: 3584
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: 987d9cf26496c694bba467aa689f5bd9, type: 3}

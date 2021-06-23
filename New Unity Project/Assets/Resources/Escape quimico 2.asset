@@ -15,5 +15,6 @@ MonoBehaviour:
   gameName: Escape quimico 2
   description: Escapa del templo resolviendo las ecuaciones quimicas!
   punctuation: 3
+  punctuationAmount: 101
   gameScreenshots: []
   gameSprite: {fileID: 21300000, guid: d0d22dd1336fff7459390956b5ca6d61, type: 3}
