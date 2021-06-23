@@ -13,11 +13,14 @@ public class Manager : MonoBehaviour
     public SettingsPopup settingsPopup;
     public Star[] stars;
     
+    private AudioSource _audioSource;
     private List<GameVisual> _gameVisuals = new List<GameVisual>();
     private Game[] _gamesFound;
 
     public void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+        
         foreach (var gameVisual in panels.SelectMany(panel => panel.gamesVisuals))
         {
             _gameVisuals.Add(gameVisual);
@@ -37,6 +40,8 @@ public class Manager : MonoBehaviour
         {
             star.SetStar(this);
         }
+
+        SetVolume();
     }
 
     public void FindGameName(string gameName)
@@ -95,5 +100,15 @@ public class Manager : MonoBehaviour
                 starFound = true;
             }
         }
+    }
+
+    public void ChangeVolume(float sliderValue)
+    {
+        _audioSource.volume = sliderValue;
+    }
+    
+    private void SetVolume()
+    {
+        settingsPopup.SetVolume(_audioSource.volume);
     }
 }

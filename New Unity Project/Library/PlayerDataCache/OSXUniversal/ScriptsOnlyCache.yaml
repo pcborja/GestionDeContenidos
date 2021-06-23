@@ -4,9 +4,13 @@ ScriptsOnlyBuild:
     - Game
     - GamePopup
     - GameVisual
+    - HelpPopup
     - Manager
     - Panel
+    - ProfileGame
+    - ProfilePopup
     - ScrollRectEx
+    - SettingsPopup
     - Star
     - UnityEngine.UI.Extensions.AutoCompleteComboBox
     Unity.2D.Tilemap.Editor.dll:
@@ -15,9 +19,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -44,7 +47,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Principal.unity:
@@ -69,57 +74,71 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9732}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9904}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9918}
+      Script: {instanceID: 9782}
     - Class: 114
-      Script: {instanceID: 9968}
+      Script: {instanceID: 9908}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 9922}
     - Class: 114
-      Script: {instanceID: 10108}
+      Script: {instanceID: 9972}
     - Class: 114
-      Script: {instanceID: 10252}
+      Script: {instanceID: 10090}
     - Class: 114
-      Script: {instanceID: 10328}
+      Script: {instanceID: 10112}
     - Class: 114
-      Script: {instanceID: 10452}
+      Script: {instanceID: 10256}
     - Class: 114
-      Script: {instanceID: 10478}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10508}
+      Script: {instanceID: 10458}
     - Class: 114
-      Script: {instanceID: 10524}
+      Script: {instanceID: 10484}
     - Class: 114
-      Script: {instanceID: 10676}
+      Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 10818}
+      Script: {instanceID: 10530}
     - Class: 114
-      Script: {instanceID: 10920}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 11024}
+      Script: {instanceID: 10826}
     - Class: 114
-      Script: {instanceID: 11140}
+      Script: {instanceID: 10928}
     - Class: 114
-      Script: {instanceID: 11176}
+      Script: {instanceID: 11032}
     - Class: 114
-      Script: {instanceID: 11194}
+      Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11674}
+      Script: {instanceID: 11270}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11418}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11484}
     - Class: 114
-      Script: {instanceID: 22424}
+      Script: {instanceID: 11686}
+    - Class: 114
+      Script: {instanceID: 11884}
+    - Class: 114
+      Script: {instanceID: 11904}
+    - Class: 114
+      Script: {instanceID: 11908}
+    - Class: 114
+      Script: {instanceID: 11934}
+    - Class: 114
+      Script: {instanceID: 11954}
+    - Class: 114
+      Script: {instanceID: 11974}
+    - Class: 114
+      Script: {instanceID: 14656}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -153,6 +172,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.UI.Extensions
     className: ResizePanel
+  - hash:
+      serializedVersion: 2
+      Hash: 6d35176eb31391d6f1a8ec5d07247a51
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Star
   - hash:
       serializedVersion: 2
       Hash: 3c08375166df118bd1801438fc36b92f
@@ -569,7 +594,7 @@ ScriptsOnlyBuild:
     className: UIVerticalScroller
   - hash:
       serializedVersion: 2
-      Hash: 3b28329e3e4df830c39701cf4de46274
+      Hash: a06d0747ac64f55c8391aa75d0ec3686
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -708,12 +733,18 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Popup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: b345696975dc4c5ed92a67de43211133
+      Hash: 48fa38ea534762f0181388f4da159865
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePopup
@@ -953,6 +984,12 @@ ScriptsOnlyBuild:
     className: PaginationManager
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProfilePopup
+  - hash:
+      serializedVersion: 2
       Hash: 9ae1b964d29c8069e2353e3428fe425a
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.UI
@@ -981,6 +1018,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.UI.Extensions
     className: TableLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HelpPopup
   - hash:
       serializedVersion: 2
       Hash: 02147077186441d097511515e118c74e
@@ -1235,7 +1278,7 @@ ScriptsOnlyBuild:
     className: UICornerCut
   - hash:
       serializedVersion: 2
-      Hash: 51f9b0831bd6b31c5a7ace82ca7b6672
+      Hash: 423319daba2d426c1063b6ce439c9286
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Manager
@@ -1245,6 +1288,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.UI.Extensions
     className: ToolTip
+  - hash:
+      serializedVersion: 2
+      Hash: f1c5a6d91b15fa569485e8821a91fe76
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProfileGame
   - hash:
       serializedVersion: 2
       Hash: 20eeaeae829475b5e354d1f626c51a2b
@@ -1325,10 +1374,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 6d35176eb31391d6f1a8ec5d07247a51
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Star
+    className: SettingsPopup
   platform: 2
   scenePathNames:
   - Assets/Scenes/Principal.unity
