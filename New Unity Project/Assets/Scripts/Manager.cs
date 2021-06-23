@@ -46,7 +46,7 @@ public class Manager : MonoBehaviour
 
     public void FindGameName(string gameName)
     {
-        var gameSelected = _gamesFound.First(x => x.gameName == gameName);
+        var gameSelected = _gamesFound.First(x => x.gameName.ToLower() == gameName.ToLower());
         OpenGamePopup(gameSelected);
     }
 
