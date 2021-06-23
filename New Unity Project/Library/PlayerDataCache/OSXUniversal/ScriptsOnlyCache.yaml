@@ -19,8 +19,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
@@ -600,7 +598,7 @@ ScriptsOnlyBuild:
     className: UIVerticalScroller
   - hash:
       serializedVersion: 2
-      Hash: a06d0747ac64f55c8391aa75d0ec3686
+      Hash: a1c3724d90f7990acded41ca35d25b8b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -750,7 +748,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 48fa38ea534762f0181388f4da159865
+      Hash: 33ff40de45f97b572a9bca1277bc7178
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePopup
